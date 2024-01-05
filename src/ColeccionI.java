@@ -1,6 +1,10 @@
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JButton;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -12,12 +16,15 @@ import java.util.List;
  * @author USUARIO
  */
 public class ColeccionI extends javax.swing.JFrame {
+    
+     private List<JButton> botones;
 
     /**
      * Creates new form ColeccionI
      */
     public ColeccionI() {
         initComponents();
+        botones = new ArrayList<>();
     }
 
     /**
@@ -29,17 +36,16 @@ public class ColeccionI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtCadena = new javax.swing.JTextField();
         btnMas = new javax.swing.JButton();
         lbltitulo = new javax.swing.JLabel();
-        lblMensaje = new javax.swing.JLabel();
-        txtEliminar = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btnMenos = new javax.swing.JButton();
+        panel = new javax.swing.JScrollPane();
+        paneles = new javax.swing.JPanel();
+        btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnMas.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 18)); // NOI18N
+        btnMas.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 48)); // NOI18N
         btnMas.setForeground(new java.awt.Color(0, 0, 255));
         btnMas.setText("+");
         btnMas.addActionListener(new java.awt.event.ActionListener() {
@@ -52,9 +58,26 @@ public class ColeccionI extends javax.swing.JFrame {
         lbltitulo.setForeground(new java.awt.Color(51, 0, 51));
         lbltitulo.setText("Frutero!!!");
 
-        jLabel1.setText("x = Eliminar");
+        btnMenos.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 48)); // NOI18N
+        btnMenos.setForeground(new java.awt.Color(255, 0, 0));
+        btnMenos.setText("-");
+        btnMenos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMenosActionPerformed(evt);
+            }
+        });
 
-        jLabel2.setText("v = Vacío");
+        paneles.setLayout(new java.awt.GridLayout(0, 3));
+        panel.setViewportView(paneles);
+
+        btnEliminar.setFont(new java.awt.Font("Berlin Sans FB Demi", 0, 48)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(102, 0, 102));
+        btnEliminar.setText("X");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,40 +86,34 @@ public class ColeccionI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(134, 134, 134)
-                        .addComponent(lbltitulo))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnMas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnMenos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(33, 33, 33)
+                        .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtCadena, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
-                                .addComponent(btnMas)
-                                .addGap(30, 30, 30)
-                                .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(16, 16, 16))
+                        .addGap(134, 134, 134)
+                        .addComponent(lbltitulo)))
+                .addGap(28, 28, 28))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbltitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lbltitulo)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCadena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMas)
-                    .addComponent(txtEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnMas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE))
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -104,30 +121,59 @@ public class ColeccionI extends javax.swing.JFrame {
 
     private void btnMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasActionPerformed
         // TODO add your handling code here:
-        List<String> listaFrutas = new ArrayList<>();
-            String fruta = txtCadena.getText();
+        JButton fruit = new JButton("?");
+        paneles.add(fruit);
+        botones.add(fruit);
+        
+        
+        fruit.addActionListener(new ActionListener() {
+        
+          @Override
+          public void actionPerformed (ActionEvent e){
+              int numRandom = (int)(Math.random()*7+1);
+              switch (numRandom) {
+            case 1:
+              fruit.setText("🍇");
+            case 2:
+              fruit.setText("🍒");
+            case 3:
+              fruit.setText("🍌");
+            case 4:
+              fruit.setText("🍊");
+            case 5:
+              fruit.setText("🍑");
+            case 6:
+              fruit.setText("🍓");
+            case 7:
+              fruit.setText("🍎");
+              
+              }
+              }
             
-            //Añadir 
-            listaFrutas.add(fruta);
-            lblMensaje.setText("añadir correcto");
-            //Eliminar
-            String frutaAEliminar = txtEliminar.getText();
-            
-            if ("x".equals(frutaAEliminar)){
-                listaFrutas.remove(frutaAEliminar);
-                lblMensaje.setText("Fruta eliminada: " + frutaAEliminar);
-            }
-            
-            //Vaciar 
-            if ("v".equals(frutaAEliminar)){
-            listaFrutas.clear();
-            }
-            
-            
-
-    
+        });
+        
+        paneles.updateUI();
             
     }//GEN-LAST:event_btnMasActionPerformed
+
+    private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
+        // TODO add your handling code here:
+        if (!botones.isEmpty()) {
+            JButton ultimoBoton = botones.remove(botones.size() - 1);
+            paneles.remove(ultimoBoton);
+            paneles.updateUI();
+        }
+        
+    }//GEN-LAST:event_btnMenosActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        if (!botones.isEmpty()) {
+            botones.clear();
+            paneles.removeAll();
+            paneles.updateUI();
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
 
     
     /**
@@ -166,12 +212,11 @@ public class ColeccionI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnMas;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lblMensaje;
+    private javax.swing.JButton btnMenos;
     private javax.swing.JLabel lbltitulo;
-    private javax.swing.JTextField txtCadena;
-    private javax.swing.JTextField txtEliminar;
+    private javax.swing.JScrollPane panel;
+    private javax.swing.JPanel paneles;
     // End of variables declaration//GEN-END:variables
 }
