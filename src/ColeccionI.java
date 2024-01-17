@@ -130,24 +130,10 @@ public class ColeccionI extends javax.swing.JFrame {
         
           @Override
           public void actionPerformed (ActionEvent e){
-              int numRandom = (int)(Math.random()*7+1);
-              switch (numRandom) {
-            case 1:
-              fruit.setText("🍇");
-            case 2:
-              fruit.setText("🍒");
-            case 3:
-              fruit.setText("🍌");
-            case 4:
-              fruit.setText("🍊");
-            case 5:
-              fruit.setText("🍑");
-            case 6:
-              fruit.setText("🍓");
-            case 7:
+              
               fruit.setText("🍎");
               
-              }
+              
               }
             
         });
